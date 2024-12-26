@@ -1,8 +1,11 @@
-import { Image, StyleSheet, Text, TouchableOpacity, View} from 'react-native';
+import { Image, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 
-function GetStarted() {
+function GetStarted({navigation}) {
+    function pressHandle() {
+        navigation.navigate('Login');
+    }
     return (
-        <View>
+        <View style={styles.container}>
             <Image style={styles.img} source={require('../assets/images/login.png')} />
             <Text style={styles.heading}>FlowSync</Text>
             <Text style={styles.text}>
@@ -10,9 +13,9 @@ function GetStarted() {
                 <Text style={styles.highlightText}>PCOD</Text> and{' '}
                 <Text style={styles.highlightText}>PCOS</Text> with ease.
             </Text>
-            <TouchableOpacity  style={styles.button} >
+            <TouchableOpacity style={styles.button} onPress={pressHandle}>
                 <Text style={styles.buttonText}>It’s time to prioritize you—
-                start today!</Text>
+                    start today!</Text>
             </TouchableOpacity>
         </View>
     )
@@ -21,6 +24,12 @@ function GetStarted() {
 export default GetStarted;
 
 const styles = StyleSheet.create({
+    container: {
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'center',
+    },
     img: {
         height: 294,
         width: 370,
