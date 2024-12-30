@@ -47,7 +47,7 @@ const Login = ({navigation}) => {
                 />
                 <Text style={styles.forgotPass}>Forgot Password?</Text>
             </View>
-            <TouchableOpacity style={styles.button} onPress={handleLogin}>
+            <TouchableOpacity style={styles.loginButton} onPress={handleLogin}>
                 <Text style={styles.buttonText}>Login</Text>
             </TouchableOpacity>
             <View style={styles.dividerContainer}>
@@ -155,6 +155,18 @@ const styles = StyleSheet.create({
         color: '#fff',
         fontSize: 16,
         fontWeight: '600'
+    },
+    loginButton: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 15,
+        backgroundColor: '#D91656',
+        padding: 15,
+        width: 150,
+        borderRadius: 10,
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginTop: 15
     },
     appleLogo: {
         width: 29,
