@@ -12,6 +12,7 @@ import Symptoms from './screens/Symptoms';
 import { Pacifico_400Regular, useFonts } from '@expo-google-fonts/pacifico';
 import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
+import Information from './screens/Information';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -36,9 +37,10 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator>
         {/* <Stack.Screen name='Home' component={GetStarted} options={{headerShown: false}}/>
-        <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/> 
-        <Stack.Screen name='Main' component={Home} options={{headerShown: false}}/> */}
-        <Stack.Screen name='Symptoms' component={Symptoms} options={{headerShown: false}}/>
+        <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>  */}
+        {/* <Stack.Screen name='Main' component={Home} options={{headerShown: false}}/> */}
+        {/* <Stack.Screen name='Symptoms' component={Symptoms} options={{headerShown: false}}/> */}
+        <Stack.Screen name='Information' component={Information} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );
