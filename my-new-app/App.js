@@ -14,6 +14,9 @@ import * as SplashScreen from 'expo-splash-screen';
 import { useEffect } from 'react';
 import Information from './screens/Information';
 import Menstrual from './screens/Menstrual';
+import Follicular from './screens/Follicular';
+import Ovulation from './screens/Ovulation';
+import Luteal from './screens/Luteal';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -43,6 +46,9 @@ export default function App() {
         {/* <Stack.Screen name='Symptoms' component={Symptoms} options={{headerShown: false}}/> */}
         <Stack.Screen name='Information' component={Information} options={{headerShown: false}}/>
         <Stack.Screen name='Menstrual' component={Menstrual} options={{headerShown: false}}/>
+        <Stack.Screen name='Follicular' component={Follicular} options={{headerShown: false}}/>
+        <Stack.Screen name='Ovulation' component={Ovulation} options={{headerShown: false}}/>
+        <Stack.Screen name='Luteal' component={Luteal} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

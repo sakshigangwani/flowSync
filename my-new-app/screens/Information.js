@@ -1,9 +1,21 @@
 import { FlatList, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const Information = ({navigation}) => {
+const Information = ({ navigation }) => {
     function pressHandle() {
         navigation.navigate('Menstrual');
+    }
+
+    function pressHandleFollicular() {
+        navigation.navigate('Follicular');
+    }
+
+    function pressHandleOvulation() {
+        navigation.navigate('Ovulation');
+    }
+
+    function pressHandleLuteal() {
+        navigation.navigate('Luteal');
     }
 
     return (
@@ -19,19 +31,19 @@ const Information = ({navigation}) => {
                 </View>
                 <View style={styles.buttons}>
                     <TouchableOpacity style={styles.Mbutton} onPress={pressHandle}>
-                        <Icon name="snowflake" size={18} color="#EE4E4E" />
+                        <Icon name="snowflake" size={18} color="#22177A" />
                         <Text style={styles.buttonText}>Menstrual</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.Fbutton}>
+                    <TouchableOpacity style={styles.Fbutton} onPress={pressHandleFollicular}>
                         <Icon name="leaf" size={18} color="#4C1F7A" />
                         <Text style={styles.buttonText}>Follicular</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.Obutton}>
+                    <TouchableOpacity style={styles.Obutton} onPress={pressHandleOvulation}>
                         <Icon name="sun" size={18} color="#A66E38" />
                         <Text style={styles.buttonText}>Ovulation</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.Lbutton}>
-                        <Icon name="cloud" size={18} color="#257180" style={styles.icon}/>
+                    <TouchableOpacity style={styles.Lbutton} onPress={pressHandleLuteal}>
+                        <Icon name="cloud" size={18} color="#257180" style={styles.icon} />
                         <Text style={styles.buttonText}>Luteal</Text>
                     </TouchableOpacity>
                 </View>
@@ -84,12 +96,12 @@ const styles = StyleSheet.create({
         alignItems: 'center'
     },
     Mbutton: {
-        backgroundColor: '#FFEFEF',
+        backgroundColor: '#BFECFF',
         height: 50,
         padding: 10,
         width: '65%',
         borderRadius: 8,
-        borderColor: '#E195AB',
+        borderColor: '#22177A',
         borderWidth: 1,
         justifyContent: 'center',
         alignItems: 'center',
