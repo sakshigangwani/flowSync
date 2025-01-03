@@ -1,7 +1,11 @@
 import { FlatList, ImageBackground, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const Information = () => {
+const Information = ({navigation}) => {
+    function pressHandle() {
+        navigation.navigate('Menstrual');
+    }
+
     return (
         <ImageBackground source={require('../assets/images/background.png')} style={styles.background} resizeMode="cover">
             <View style={styles.container}>
@@ -14,8 +18,8 @@ const Information = () => {
                     <Text style={styles.emoji}>🌙💡</Text>
                 </View>
                 <View style={styles.buttons}>
-                    <TouchableOpacity style={styles.Mbutton}>
-                        <Icon name="wind" size={18} color="#EE4E4E" />
+                    <TouchableOpacity style={styles.Mbutton} onPress={pressHandle}>
+                        <Icon name="snowflake" size={18} color="#EE4E4E" />
                         <Text style={styles.buttonText}>Menstrual</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.Fbutton}>

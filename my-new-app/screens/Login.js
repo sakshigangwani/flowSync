@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Button, Image, StyleSheet, Text, TouchableOpacity, View } from "react-native";
 import { TextInput } from 'react-native-paper';
 import { signInWithEmailAndPassword } from "firebase/auth";
-import { auth } from "../config/firebase"; // Import the auth instance
+import { auth } from "../config/firebase"; 
 
 const Login = ({navigation}) => {
     const [text, setText] = useState("");
