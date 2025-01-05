@@ -8,12 +8,16 @@ import { Avatar } from 'react-native-paper';
 import { Image } from "react-native";
 import { Divider } from 'react-native-paper';
 
-function Home({navigation}) {
+function Home({ navigation }) {
     const [active, setActive] = useState('');
     const [selectDate, setSelectDate] = useState('');
 
     function pressHandle() {
         navigation.navigate('Symptoms')
+    }
+
+    function pressHandleInfo() {
+        navigation.navigate('Information')
     }
 
     return (
@@ -31,7 +35,7 @@ function Home({navigation}) {
                     <Text style={styles.heading}>Select Date</Text>
                     <View style={styles.Date}>
                         <Text style={styles.heading}>January, 2025</Text>
-                        <Icon name="arrow-down" size={22} color="#3B1C32" />
+                        <Icon name="arrow-down" size={22} color="#180161" />
                     </View>
                 </View>
                 <View style={styles.boxes}>
@@ -43,27 +47,42 @@ function Home({navigation}) {
                         <Text style={selectDate === 'Tue' ? styles.selectedDateHeading : styles.boxHeading}>Tue</Text>
                         <Text style={selectDate === 'Tue' ? styles.selectedDateDate : styles.boxDate}>13</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity  style={selectDate === 'Wed' ? styles.selectedDate : styles.box} onPress={() => setSelectDate('Wed')}>
-                        <Text  style={selectDate === 'Wed' ? styles.selectedDateHeading : styles.boxHeading}>Wed</Text>
+                    <TouchableOpacity style={selectDate === 'Wed' ? styles.selectedDate : styles.box} onPress={() => setSelectDate('Wed')}>
+                        <Text style={selectDate === 'Wed' ? styles.selectedDateHeading : styles.boxHeading}>Wed</Text>
                         <Text style={selectDate === 'Wed' ? styles.selectedDateDate : styles.boxDate}>14</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity  style={selectDate === 'Thu' ? styles.selectedDate : styles.box} onPress={() => setSelectDate('Thu')}>
+                    <TouchableOpacity style={selectDate === 'Thu' ? styles.selectedDate : styles.box} onPress={() => setSelectDate('Thu')}>
                         <Text style={selectDate === 'Thu' ? styles.selectedDateHeading : styles.boxHeading}>Thu</Text>
                         <Text style={selectDate === 'Thu' ? styles.selectedDateDate : styles.boxDate}>15</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity  style={selectDate === 'Fri' ? styles.selectedDate : styles.box} onPress={() => setSelectDate('Fri')}>
+                    <TouchableOpacity style={selectDate === 'Fri' ? styles.selectedDate : styles.box} onPress={() => setSelectDate('Fri')}>
                         <Text style={selectDate === 'Fri' ? styles.selectedDateHeading : styles.boxHeading}>Fri</Text>
-                        <Text  style={selectDate === 'Fri' ? styles.selectedDateDate : styles.boxDate}>16</Text>
+                        <Text style={selectDate === 'Fri' ? styles.selectedDateDate : styles.boxDate}>16</Text>
                     </TouchableOpacity>
                 </View>
-                <View style = {styles.symptomsContainer}>
-                    <TouchableOpacity style = {styles.symptomsBox} onPress={pressHandle}>
-                        <Text style = {styles.symptomsText}>Add Symptoms</Text>
+                <View style={styles.symptomsContainer}>
+                    <TouchableOpacity style={styles.symptomsBox} onPress={pressHandle}>
+                        <Text style={styles.symptomsText}>Add Symptoms</Text>
+                    </TouchableOpacity>
+                    <TouchableOpacity style={styles.symptomsBox} onPress={pressHandle}>
+                        <Text style={styles.symptomsText}>Add Medication</Text>
                     </TouchableOpacity>
                 </View>
                 <Divider style={{ backgroundColor: '#640D5F', height: 2, width: '80%', marginVertical: 20 }} />
+                <View style={styles.knowledgeContainer}>
+                    <Text style={styles.knowledgeHeading}>Knowledge Yourself</Text>
+                    <View style={styles.knowledgeBoxes}>
+                        <Image source={require('../assets/images/periods.jpg')} style={styles.logo} />
+                        <View style={styles.readMoreContainer}>
+                            <Text style={styles.knowledgeCaption}>The Circle of Strength: Menstrual, Follicular, Ovulation, Luteal</Text>
+                            <TouchableOpacity style={styles.readMoreBtn} onPress={pressHandleInfo}>
+                                <Text style={styles.readMoreBtnText}>Read More</Text>
+                            </TouchableOpacity>
+                        </View>
+                </View>
             </View>
-        </ImageBackground>
+        </View>
+        </ImageBackground >
 
     )
 }
@@ -101,7 +120,7 @@ const styles = StyleSheet.create({
     heading: {
         fontSize: 22,
         fontWeight: 'bold',
-        color: '#3B1C32'
+        color: '#180161'
     },
     selectDate: {
         flexDirection: 'row',
@@ -160,10 +179,12 @@ const styles = StyleSheet.create({
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
+        flexDirection: 'row',
+        gap: 20
     },
     symptomsBox: {
-        backgroundColor:'#F5EFFF',
-        width: '45%',
+        backgroundColor: '#F5EFFF',
+        width: '35%',
         height: 50,
         justifyContent: 'center',
         alignItems: 'center',
@@ -175,5 +196,53 @@ const styles = StyleSheet.create({
         fontSize: 16,
         fontWeight: '600',
         color: '#640D5F'
+    },
+    knowledgeContainer: {
+        width: '87%'
+    },
+    knowledgeHeading: {
+        fontSize: 19,
+        marginRight: 187, 
+        color: '#180161',
+        fontWeight: 'bold'
+    },
+    logo: {
+        width: 180,
+        height: 130,
+        marginLeft: 10,
+        borderRadius: 8,
+        marginLeft: 15
+    },
+    knowledgeBoxes: {
+        backgroundColor: '#FEFBD8',
+        marginTop: 13,
+        height: 180,
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        gap: 12,
+        borderColor: '#EECEB9',
+        borderWidth: 2,
+        borderRadius: 10
+    },
+    knowledgeCaption: {
+        fontSize: 15,
+        width: '42%',
+        color: '#D20062',
+    },
+    readMoreContainer: {
+        flexDirection: 'column',
+        gap: 13
+    },
+    readMoreBtn: {
+        backgroundColor: '#D20062',
+        width: '25%',
+        alignItems: 'center',
+        justifyContent: 'center',
+        height: 35,
+        borderRadius: 8,
+    },
+    readMoreBtnText: {
+        color: '#fff'
     }
 })

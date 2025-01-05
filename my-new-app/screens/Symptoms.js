@@ -10,7 +10,7 @@ const Symptoms = () => {
     useEffect(() => {
         Animated.timing(fadeAnim, {
             toValue: 1,
-            duration: 2900,
+            duration: 2000,
             useNativeDriver: true,
         }).start();
     }, [fadeAnim]);
