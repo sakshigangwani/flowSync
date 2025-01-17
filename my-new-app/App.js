@@ -17,6 +17,7 @@ import Menstrual from './screens/Menstrual';
 import Follicular from './screens/Follicular';
 import Ovulation from './screens/Ovulation';
 import Luteal from './screens/Luteal';
+import Medication from './screens/Medication';
 
 SplashScreen.preventAutoHideAsync();
 
@@ -49,6 +50,7 @@ export default function App() {
         <Stack.Screen name='Follicular' component={Follicular} options={{headerShown: false}}/>
         <Stack.Screen name='Ovulation' component={Ovulation} options={{headerShown: false}}/>
         <Stack.Screen name='Luteal' component={Luteal} options={{headerShown: false}}/>
+        <Stack.Screen name='Medication' component={Medication} options={{headerShown: false}}/>
       </Stack.Navigator>
     </NavigationContainer>
   );

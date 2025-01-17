@@ -20,6 +20,10 @@ function Home({ navigation }) {
         navigation.navigate('Information')
     }
 
+    function pressMedicationHandle() {
+        navigation.navigate('Medication')
+    }
+
     return (
         <ImageBackground source={require('../assets/images/background.png')} style={styles.background} resizeMode="cover">
             <View style={styles.header}>
@@ -64,7 +68,7 @@ function Home({ navigation }) {
                     <TouchableOpacity style={styles.symptomsBox} onPress={pressHandle}>
                         <Text style={styles.symptomsText}>Add Symptoms</Text>
                     </TouchableOpacity>
-                    <TouchableOpacity style={styles.symptomsBox} onPress={pressHandle}>
+                    <TouchableOpacity style={styles.symptomsBox} onPress={pressMedicationHandle}>
                         <Text style={styles.symptomsText}>Add Medication</Text>
                     </TouchableOpacity>
                 </View>
