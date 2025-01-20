@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/FontAwesome5';
 import { useEffect, useRef, useState } from "react";
 import { Button } from 'react-native-paper';
 
-const Symptoms = () => {
+const Symptoms = ({navigation}) => {
     const fadeAnim = useAnimatedValue(0); // Initial value for opacity: 0
 
     useEffect(() => {
@@ -19,11 +19,15 @@ const Symptoms = () => {
     const [selectedMood, setSelectedMood] = useState("");
     const [selectedSymptoms, setSelectedSymptoms] = useState("");
 
+    function pressHandle() {
+        navigation.navigate('Main')
+    }
+
     return (
         <ImageBackground source={require('../assets/images/background.png')} style={styles.background} resizeMode="cover">
             <View style={styles.header}>
                 <View style={styles.icon}>
-                    <Icon name="arrow-left" size={30} color="black" />
+                    <Icon name="arrow-left" size={30} color="black" onPress={pressHandle}/>
                 </View>
                 <View style={styles.name}>
                     <Text style={styles.nameText}>Symptoms</Text>

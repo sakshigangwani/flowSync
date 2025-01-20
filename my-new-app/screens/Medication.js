@@ -2,8 +2,10 @@ import { useState } from 'react';
 import { Button, Image, ImageBackground, StyleSheet, Text, TextInput, TouchableOpacity, View } from 'react-native';
 import { Divider } from 'react-native-paper';
 import { SelectList } from 'react-native-dropdown-select-list'
+import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const Medication = () => {
+
+const Medication = ({navigation}) => {
     const [selectedMedication, setSelectedMedication] = useState("");
     const [customMedication, setCustomMedication] = useState(""); // For user input
     const [date, setDate] = useState("");
@@ -32,8 +34,17 @@ const Medication = () => {
         }
     };
 
+    function pressHandle() {
+        navigation.navigate('Main')
+    }
+
     return (
         <ImageBackground source={require('../assets/images/background.png')} style={styles.background} resizeMode="cover">
+            <View style={styles.header}>
+                <View style={styles.icon}>
+                    <Icon name="arrow-left" size={30} color="black" onPress={pressHandle} />
+                </View>
+            </View>
             <View style={styles.container}>
                 <View style={styles.headerContainer}>
                     <Image style={styles.img} source={require('../assets/images/medication.png')} />
@@ -107,7 +118,7 @@ const styles = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        marginTop: 40
+        marginTop: -40
     },
     headerContainer: {
         alignItems: 'center',
@@ -194,6 +205,7 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop: 10,
         backgroundColor: "#F5EFFF",
+        width: '63%',
     },
     textInputTime: {
         borderWidth: 1,
@@ -202,6 +214,7 @@ const styles = StyleSheet.create({
         padding: 10,
         marginTop: 10,
         backgroundColor: "#F5EFFF",
+        width: '63%',
     },
     addButton: {
         color: "#fff",
@@ -222,5 +235,14 @@ const styles = StyleSheet.create({
     btnText: {
         color: '#fff',
         fontWeight: 'bold'
-    }
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 30
+    },
+    icon: {
+        marginTop: 85,
+        marginLeft: 30,
+    },
 })

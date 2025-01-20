@@ -18,8 +18,17 @@ const Information = ({ navigation }) => {
         navigation.navigate('Luteal');
     }
 
+    function pressHandleMain() {
+        navigation.navigate('Main');
+    }
+
     return (
         <ImageBackground source={require('../assets/images/background.png')} style={styles.background} resizeMode="cover">
+            <View style={styles.header}>
+                <View style={styles.icon}>
+                    <Icon name="arrow-left" size={30} color="black" onPress={pressHandleMain} />
+                </View>
+            </View>
             <View style={styles.container}>
                 <Text>
                     <Text style={styles.heading}>Cycle </Text>
@@ -43,7 +52,7 @@ const Information = ({ navigation }) => {
                         <Text style={styles.buttonText}>Ovulation</Text>
                     </TouchableOpacity>
                     <TouchableOpacity style={styles.Lbutton} onPress={pressHandleLuteal}>
-                        <Icon name="cloud" size={18} color="#257180" style={styles.icon} />
+                        <Icon name="cloud" size={18} color="#257180" style={styles.iconL} />
                         <Text style={styles.buttonText}>Luteal</Text>
                     </TouchableOpacity>
                 </View>
@@ -63,7 +72,8 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         justifyContent: 'center',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginTop: -50
     },
     heading: {
         fontSize: 45,
@@ -154,7 +164,16 @@ const styles = StyleSheet.create({
         textAlign: 'center',
         fontSize: 16,
     },
-    icon: {
+    iconL: {
         marginLeft: -18
-    }
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 30
+    },
+    icon: {
+        marginTop: 85,
+        marginLeft: 30,
+    },
 })

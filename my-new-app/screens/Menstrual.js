@@ -2,9 +2,19 @@ import { ImageBackground, StyleSheet, Text, View } from "react-native";
 import { Divider } from 'react-native-paper';
 import Icon from 'react-native-vector-icons/FontAwesome5';
 
-const Menstrual = () => {
+const Menstrual = ({navigation}) => {
+
+    function pressHandleMain() {
+        navigation.navigate('Information');
+    }
+
     return (
         <ImageBackground source={require('../assets/images/background.png')} style={styles.background} resizeMode="cover">
+            <View style={styles.header}>
+                <View style={styles.icon}>
+                    <Icon name="arrow-left" size={30} color="black" onPress={pressHandleMain} />
+                </View>
+            </View>
             <View style={styles.container}>
                 <Text style={styles.heading}>Menstrual</Text>
                 <View style={styles.captionCombined}>
@@ -45,6 +55,7 @@ const styles = StyleSheet.create({
         flex: 1,
         justifyContent: 'center',
         alignItems: 'center',
+        marginTop: -50
     },
     heading: {
         fontSize: 45,
@@ -122,5 +133,14 @@ const styles = StyleSheet.create({
         fontSize: 17,
         textAlign: 'center',
         marginTop: 4
-    }
+    },
+    header: {
+        flexDirection: 'row',
+        alignItems: 'center',
+        gap: 30
+    },
+    icon: {
+        marginTop: 85,
+        marginLeft: 30,
+    },
 })

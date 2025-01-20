@@ -34,6 +34,9 @@ function Home({ navigation }) {
                     <Text style={styles.nameText}>Hi, Sakshi</Text>
                 </View>
             </View>
+            <View style={styles.imgContainer}>
+                        <Image source={require('../assets/images/popcorn.png')} style={styles.img} />
+                    </View>
             <View style={styles.container}>
                 <View style={styles.selectDate}>
                     <Text style={styles.heading}>Select Date</Text>
@@ -83,9 +86,10 @@ function Home({ navigation }) {
                                 <Text style={styles.readMoreBtnText}>Read More</Text>
                             </TouchableOpacity>
                         </View>
+                    </View>
+                    
                 </View>
             </View>
-        </View>
         </ImageBackground >
 
     )
@@ -130,6 +134,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '87%',
+        marginTop: "-15%"
     },
     Date: {
         flexDirection: 'row',
@@ -206,7 +211,7 @@ const styles = StyleSheet.create({
     },
     knowledgeHeading: {
         fontSize: 19,
-        marginRight: 187, 
+        marginRight: 187,
         color: '#180161',
         fontWeight: 'bold'
     },
@@ -248,5 +253,15 @@ const styles = StyleSheet.create({
     },
     readMoreBtnText: {
         color: '#fff'
+    },
+    img: {
+        height: 204,
+        width: 280,
+        borderRadius: 80,
+        marginTop: 30
+    },
+    imgContainer: {
+        alignItems: 'center',
+        justifyContent: 'center'
     }
 })
