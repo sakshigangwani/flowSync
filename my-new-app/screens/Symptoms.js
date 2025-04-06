@@ -195,7 +195,7 @@ const styles = StyleSheet.create({
         marginLeft: 30,
     },
     nameText: {
-        marginTop: 85,
+        marginTop: 80,
         textAlign: 'center',
         fontSize: 35,
         fontFamily: 'Pacifico_400Regular',
@@ -203,7 +203,7 @@ const styles = StyleSheet.create({
     },
     mainContainer: {
         marginLeft: 30,
-        marginTop: 27
+        marginTop: 10
     },
     headingText: {
         fontSize: 25,
@@ -212,13 +212,14 @@ const styles = StyleSheet.create({
     },
     menstrualContainer: {
         backgroundColor: '#FFEFEF',
-        width: '87%',
+        width: '88%',
         height: '13%',
-        marginLeft: 30,
-        marginTop: 20,
+        marginHorizontal: 25,
+        marginTop: 10,
         borderRadius: 9,
         borderColor: '#E195AB',
-        borderWidth: 1
+        borderWidth: 1,
+        paddingHorizontal: 5
     },
     menstrualText: {
         fontSize: 17,
@@ -228,6 +229,7 @@ const styles = StyleSheet.create({
     buttonsContainer: {
         flexDirection: 'row',
         justifyContent: 'space-evenly',
+        gap: 2
     },
     customButton: {
         borderColor: '#E195AB',
@@ -252,12 +254,13 @@ const styles = StyleSheet.create({
     moodContainer: {
         backgroundColor: '#FBFFE2',
         height: 220,
-        width: '87%',
-        marginLeft: 30,
+        width: '88%',
+        marginHorizontal: 25,
         marginTop: 20,
         borderRadius: 9,
         borderColor: '#FFACAC',
-        borderWidth: 1
+        borderWidth: 1,
+        paddingHorizontal: 5
     },
     threeButtons: {
         flexDirection: 'row',
@@ -312,12 +315,12 @@ const styles = StyleSheet.create({
     symptomsContainer: {
         backgroundColor: '#F5EFFF',
         height: 220,
-        width: '87%',
-        marginLeft: 30,
+        width: '88%',
+        marginHorizontal: 25,
         marginTop: 20,
         borderRadius: 9,
         borderColor: '#8D77AB',
-        borderWidth: 1
+        borderWidth: 1,
     },
     symptomsBtnContainer: {
         flexDirection: 'row',
@@ -384,7 +387,7 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'center',
         alignItems: 'center',
-        marginTop: 20,
-        marginLeft: 110
+        marginTop: 10,
+        marginLeft: 95
     }
 })

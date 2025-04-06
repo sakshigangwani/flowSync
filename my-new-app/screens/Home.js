@@ -134,7 +134,8 @@ const styles = StyleSheet.create({
         flexDirection: 'row',
         justifyContent: 'space-between',
         width: '87%',
-        marginTop: "-15%"
+        // marginTop: "-15%"
+        marginTop: 6
     },
     Date: {
         flexDirection: 'row',
@@ -144,8 +145,8 @@ const styles = StyleSheet.create({
     },
     boxes: {
         flexDirection: 'row',
-        gap: 10,
-        marginTop: 35
+        gap: 6,
+        marginTop: 15,
     },
     box: {
         // backgroundColor: 'yellow',
@@ -184,7 +185,7 @@ const styles = StyleSheet.create({
         marginTop: 4
     },
     symptomsContainer: {
-        marginTop: 30,
+        marginTop: 20,
         width: '100%',
         justifyContent: 'center',
         alignItems: 'center',
@@ -211,13 +212,14 @@ const styles = StyleSheet.create({
     },
     knowledgeHeading: {
         fontSize: 19,
-        marginRight: 187,
+        // marginRight: 187,
         color: '#180161',
-        fontWeight: 'bold'
+        fontWeight: 'bold',
+        marginTop: "-2%"
     },
     logo: {
-        width: 180,
-        height: 130,
+        width: 160,
+        height: 110,
         marginLeft: 10,
         borderRadius: 8,
         marginLeft: 15
@@ -235,7 +237,7 @@ const styles = StyleSheet.create({
         borderRadius: 10
     },
     knowledgeCaption: {
-        fontSize: 15,
+        fontSize: 14,
         width: '42%',
         color: '#D20062',
     },
@@ -258,7 +260,7 @@ const styles = StyleSheet.create({
         height: 204,
         width: 280,
         borderRadius: 80,
-        marginTop: 30
+        marginTop: 25
     },
     imgContainer: {
         alignItems: 'center',

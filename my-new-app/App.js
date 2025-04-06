@@ -41,8 +41,8 @@ export default function App() {
   return (
     <NavigationContainer>
       <Stack.Navigator>
-        {/* <Stack.Screen name='Home' component={GetStarted} options={{headerShown: false}}/>
-        <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/>  */}
+        <Stack.Screen name='Home' component={GetStarted} options={{headerShown: false}}/>
+        <Stack.Screen name='Login' component={Login} options={{headerShown: false}}/> 
         <Stack.Screen name='Main' component={Home} options={{headerShown: false}}/>
         <Stack.Screen name='Symptoms' component={Symptoms} options={{headerShown: false}}/>
         <Stack.Screen name='Information' component={Information} options={{headerShown: false}}/>

@@ -127,6 +127,7 @@ const styles = StyleSheet.create({
     img: {
         height: 224,
         width: 300,
+        borderRadius: '50%'
     },
     heading: {
         fontSize: 38,
@@ -226,7 +227,7 @@ const styles = StyleSheet.create({
         borderRadius: 8
     },
     btn: {
-        marginTop: 25,
+        marginTop: 14,
         backgroundColor: '#640D5F',
         paddingVertical: 10,
         paddingHorizontal: 15,
